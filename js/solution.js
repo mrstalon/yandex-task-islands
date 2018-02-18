@@ -52,25 +52,17 @@ whileloop: while (!haveIslandsBeenCount) {
             map: arrayToReturn,
             islandsToAdd: 1,
         }
-        if(x-1 >= 0) {
-            if(arrayToReturn[y][x-1]===1) {
-                objectToReturn = deleteIslandRecursive(arrayToReturn, x-1, y);
-            }
+        if(x - 1 >= 0 && arrayToReturn[y][x-1] === 1) {
+            objectToReturn = deleteIslandRecursive(arrayToReturn, x - 1, y);
         }
-        if(x+1 <= arrayToReturn[y].length-1) {
-            if(arrayToReturn[y][x+1]===1) {
-                objectToReturn = deleteIslandRecursive(arrayToReturn, x+1, y);
-            }
+        if(x + 1 <= arrayToReturn[y].length-1 && arrayToReturn[y][x+1] === 1) {
+            objectToReturn = deleteIslandRecursive(arrayToReturn, x + 1, y);
         }
-        if(y-1 >= 0) {
-            if(arrayToReturn[y-1][x]===1) {
-                objectToReturn = deleteIslandRecursive(arrayToReturn, x, y-1);
-            }
+        if(y - 1 >= 0 && arrayToReturn[y-1][x] === 1) {
+            objectToReturn = deleteIslandRecursive(arrayToReturn, x, y - 1);
         }
-        if(y+1 <=arrayToReturn.length-1) {
-            if(arrayToReturn[y+1][x]===1) {
-                objectToReturn = deleteIslandRecursive(arrayToReturn, x, y+1);
-            }
+        if(y+1 <=arrayToReturn.length - 1 && arrayToReturn[y+1][x] === 1) {
+            objectToReturn = deleteIslandRecursive(arrayToReturn, x, y + 1);
         }
 
         return objectToReturn;
